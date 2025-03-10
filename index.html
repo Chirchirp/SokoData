@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SokoData Solutions - Data-Driven Insights for Business and Operational Needs</title>
+  <meta name="description" content="SokoData Solutions delivers data-driven insights to empower business needs across agriculture, fintech, healthcare, retail, data security, and data consultation." />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS CSS for animations -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!-- Flowbite (for modals and interactive components) -->
+  <script src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.js"></script>
+  <style>
+    /* Custom Preloader Animation */
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .spinner {
+      border: 4px solid rgba(0, 0, 0, 0.1);
+      border-left-color: #0077b6;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+  <!-- Preloader -->
+  <div id="preloader" class="fixed inset-0 flex items-center justify-center bg-white z-50">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="py-6 bg-gray-100 text-center" data-aos="fade-down">
+    <div class="container mx-auto">
+      <h1 class="text-4xl font-bold">SokoData Solutions</h1>
+      <p class="mt-2 text-lg">Empowering Businesses with Data-Driven Insights</p>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="bg-blue-700 sticky top-0 z-40 shadow" id="navbar">
+    <div class="container mx-auto flex items-center justify-between px-4 py-3">
+      <a href="#" class="flex items-center text-white text-xl font-semibold">
+        <i class="fas fa-database mr-2"></i>SokoData
+      </a>
+      <div class="space-x-4 hidden md:flex">
+        <a href="#home" class="nav-link text-white hover:text-yellow-300"><i class="fas fa-home mr-1"></i>Home</a>
+        <a href="#services" class="nav-link text-white hover:text-yellow-300"><i class="fas fa-cogs mr-1"></i>Solutions</a>
+        <a href="#about" class="nav-link text-white hover:text-yellow-300"><i class="fas fa-info-circle mr-1"></i>About</a>
+        <a href="#testimonials" class="nav-link text-white hover:text-yellow-300"><i class="fas fa-quote-left mr-1"></i>Testimonials</a>
+        <a href="#" class="nav-link text-white hover:text-yellow-300" data-modal-target="contactModal" data-modal-toggle="contactModal"><i class="fas fa-envelope mr-1"></i>Contact</a>
+      </div>
+      <!-- Mobile menu button -->
+      <button id="menuButton" class="text-white md:hidden">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden hidden bg-blue-700">
+      <a href="#home" class="block px-4 py-2 text-white hover:bg-blue-600">Home</a>
+      <a href="#services" class="block px-4 py-2 text-white hover:bg-blue-600">Solutions</a>
+      <a href="#about" class="block px-4 py-2 text-white hover:bg-blue-600">About</a>
+      <a href="#testimonials" class="block px-4 py-2 text-white hover:bg-blue-600">Testimonials</a>
+      <a href="#" class="block px-4 py-2 text-white hover:bg-blue-600" data-modal-target="contactModal" data-modal-toggle="contactModal">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section (Updated Layout) -->
+  <section id="home" class="relative bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+    <div class="relative container mx-auto flex flex-col items-center justify-center h-screen text-center px-4" data-aos="zoom-in">
+      <h2 class="text-4xl md:text-6xl font-bold text-white leading-tight max-w-4xl">
+        Transforming Data into Decisions
+      </h2>
+      <p class="mt-6 text-xl md:text-2xl text-white max-w-2xl">
+        Innovative analytics solutions tailored for your business and operational needs
+      </p>
+      <a href="#services" class="mt-8 inline-block border border-white text-white py-3 px-6 rounded hover:bg-white hover:text-blue-700 transition">
+        Our Solutions
+      </a>
+    </div>
+  </section>
+
+<!-- Solutions Section -->
+<section id="services" class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Our Solutions</h2>
+      <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <!-- Agriculture Card -->
+        <div class="bg-white rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=800&q=80" alt="Agriculture Analytics" class="w-full h-48 object-cover rounded-t-lg">
+          <div class="p-4">
+            <h5 class="font-bold text-xl">Agriculture Analytics</h5>
+            <p class="mt-2 text-gray-600">Optimize crop planning with precision farming tools combining weather and soil data.</p>
+          </div>
+        </div>
+        <!-- Fintech Card -->
+        <div class="bg-white rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="200">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80" alt="Fintech Insights" class="w-full h-48 object-cover rounded-t-lg">
+          <div class="p-4">
+            <h5 class="font-bold text-xl">Fintech Insights</h5>
+            <p class="mt-2 text-gray-600">Leverage mobile money data for fraud detection and customer insights.</p>
+          </div>
+        </div>
+        <!-- Healthcare Card -->
+        <div class="bg-white rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="300">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1576765974257-b414b9ea0051?auto=format&fit=crop&w=800&q=80" alt="Healthcare Analytics" class="w-full h-48 object-cover rounded-t-lg">
+          <div class="p-4">
+            <h5 class="font-bold text-xl">Healthcare Analytics</h5>
+            <p class="mt-2 text-gray-600">Optimize healthcare resource management with predictive analytics.</p>
+          </div>
+        </div>
+        <!-- Retail Analytics Card -->
+        <div class="bg-white rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="400">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&w=800&q=80" alt="Retail Analytics" class="w-full h-48 object-cover rounded-t-lg">
+          <div class="p-4">
+            <h5 class="font-bold text-xl">Retail Analytics</h5>
+            <p class="mt-2 text-gray-600">Unlock consumer insights through advanced market analysis.</p>
+          </div>
+        </div>
+        <!-- Cyber Security Analytics Card -->
+        <div class="bg-white rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="500">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=800&q=80" alt="Cyber Security Analytics" class="w-full h-48 object-cover rounded-t-lg">
+          <div class="p-4">
+            <h5 class="font-bold text-xl">Cyber Security Analytics</h5>
+            <p class="mt-2 text-gray-600">Mitigate risks with data-driven strategies and real-time threat analysis.</p>
+          </div>
+        </div>
+        <!-- Data Protection Solutions Card -->
+        <div class="bg-white rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="600">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=800&q=80" alt="Data Protection Solutions" class="w-full h-48 object-cover rounded-t-lg">
+          <div class="p-4">
+            <h5 class="font-bold text-xl">Data Protection Solutions</h5>
+            <p class="mt-2 text-gray-600">Secure your business with robust data protection frameworks and compliance analytics.</p>
+          </div>
+        </div>
+        <!-- Data Consultation Card -->
+        <div class="bg-white rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="700">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80" alt="Data Consultation" class="w-full h-48 object-cover rounded-t-lg">
+          <div class="p-4">
+            <h5 class="font-bold text-xl">Data Consultation</h5>
+            <p class="mt-2 text-gray-600">Consult with our experts to gain personalized insights from your data, driving smarter decisions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">About Us</h2>
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2" data-aos="fade-right">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80" alt="About SokoData" class="rounded-lg shadow-lg" />
+        </div>
+        <div class="md:w-1/2 mt-8 md:mt-0 md:pl-12" data-aos="fade-left">
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <p>SokoData Solutions is committed to delivering data-driven insights that empower Kenyan businesses. Our experienced team harnesses the power of analytics to drive growth and innovation.</p>
+            <p class="mt-4">We specialize in tailored solutions for industries including agriculture, fintech, healthcare, retail, and data security.</p>
+            <p class="mt-4">In addition, we offer comprehensive trainings on data analytics and upskilling programs to help organizations stay ahead in today’s competitive, data-driven world.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Testimonials</h2>
+      <!-- Simple Carousel using Flowbite -->
+      <div id="testimonialCarousel" class="relative" data-carousel="slide" data-aos="fade-up">
+        <div class="relative h-64 overflow-hidden rounded-lg">
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <blockquote class="flex h-full flex-col items-center justify-center text-center px-8">
+              <p class="mb-4 text-xl italic">"SokoData transformed our business operations with actionable insights. The team is amazing!"</p>
+              <footer class="text-gray-600">Jane Doe, CEO, AgriCorp</footer>
+            </blockquote>
+          </div>
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <blockquote class="flex h-full flex-col items-center justify-center text-center px-8">
+              <p class="mb-4 text-xl italic">"Their data-driven strategies are a game-changer. Highly recommend SokoData Solutions."</p>
+              <footer class="text-gray-600">John Smith, CTO, FinTech Inc</footer>
+            </blockquote>
+          </div>
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <blockquote class="flex h-full flex-col items-center justify-center text-center px-8">
+              <p class="mb-4 text-xl italic">"The training programs were insightful and practical. We saw immediate improvements in our operations."</p>
+              <footer class="text-gray-600">Mary Johnson, Manager, HealthPlus</footer>
+            </blockquote>
+          </div>
+        </div>
+        <!-- Slider Controls -->
+        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50">
+            <i class="fas fa-chevron-left text-white"></i>
+          </span>
+          <span class="sr-only">Previous</span>
+        </button>
+        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50">
+            <i class="fas fa-chevron-right text-white"></i>
+          </span>
+          <span class="sr-only">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Modal (Using Flowbite Modal) -->
+  <div id="contactModal" tabindex="-1" aria-hidden="true" class="hidden fixed inset-0 z-50 overflow-y-auto" data-modal-backdrop="static">
+    <div class="relative w-full max-w-md p-4 mx-auto mt-24">
+      <div class="relative bg-white rounded-lg shadow">
+        <div class="flex items-start justify-between p-4 border-b rounded-t">
+          <h3 class="text-xl font-semibold text-gray-900">Get in Touch</h3>
+          <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" data-modal-hide="contactModal">
+            <i class="fas fa-times"></i>
+            <span class="sr-only">Close modal</span>
+          </button>
+        </div>
+        <div class="p-6">
+          <form id="contactFormModal">
+            <div class="mb-4">
+              <label class="block mb-2 text-sm font-medium text-gray-900">Your Name</label>
+              <div class="flex items-center border border-gray-300 rounded">
+                <span class="px-3 text-gray-500"><i class="fas fa-user"></i></span>
+                <input type="text" class="w-full p-2 focus:outline-none" placeholder="John Doe" required />
+              </div>
+            </div>
+            <div class="mb-4">
+              <label class="block mb-2 text-sm font-medium text-gray-900">Email Address</label>
+              <div class="flex items-center border border-gray-300 rounded">
+                <span class="px-3 text-gray-500"><i class="fas fa-envelope"></i></span>
+                <input type="email" class="w-full p-2 focus:outline-none" placeholder="name@example.com" required />
+              </div>
+            </div>
+            <div class="mb-4">
+              <label class="block mb-2 text-sm font-medium text-gray-900">Your Message</label>
+              <div class="flex items-center border border-gray-300 rounded">
+                <span class="px-3 text-gray-500"><i class="fas fa-comment"></i></span>
+                <textarea class="w-full p-2 focus:outline-none" rows="4" placeholder="How can we help you?" required></textarea>
+              </div>
+            </div>
+            <button type="submit" class="w-full bg-blue-700 text-white py-2 rounded hover:bg-blue-800 transition flex items-center justify-center">
+              <i class="fas fa-paper-plane mr-2"></i>Send Message
+            </button>
+          </form>
+          <div id="modalFormMessage" class="mt-4 text-center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-6 bg-blue-700 text-white">
+    <div class="container mx-auto text-center">
+      <p>&copy; <span id="year"></span> SokoData Solutions. All rights reserved.</p>
+      <div class="mt-2 space-x-4">
+        <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true });
+
+    // Hide preloader when page is fully loaded
+    window.addEventListener('load', function() {
+      document.getElementById('preloader').classList.add('hidden');
+    });
+
+    // Mobile Menu Toggle
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Contact Form Submission Simulation
+    document.getElementById('contactFormModal').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const messageDiv = document.getElementById('modalFormMessage');
+      const submitButton = this.querySelector('button[type="submit"]');
+      submitButton.disabled = true;
+      messageDiv.innerHTML = `<div class="text-blue-700 flex items-center justify-center"><i class="fas fa-spinner fa-spin mr-2"></i> Sending message...</div>`;
+      setTimeout(() => {
+        messageDiv.innerHTML = `<div class="text-green-600 flex items-center justify-center"><i class="fas fa-check-circle mr-2"></i> Message sent successfully! We'll respond within 24 hours.</div>`;
+        this.reset();
+        submitButton.disabled = false;
+        setTimeout(() => messageDiv.innerHTML = '', 4000);
+      }, 2000);
+    });
+
+    // Set current year dynamically
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
