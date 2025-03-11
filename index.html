@@ -5,50 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SokoData Solutions - Data-Driven Insights</title>
   <meta name="description" content="SokoData Solutions delivers data-driven insights to empower business needs across multiple industries." />
-  
+
   <!-- Preconnect to external resources -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="preconnect" href="https://unpkg.com">
-  
-  <!-- Font Awesome -->
+
+  <!-- Font Awesome CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  
-  <!-- Tailwind CSS with Custom Configuration -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#1A73E8',
-            secondary: '#34A853',
-            accent: '#FBBC05',
-            dark: '#0F172A',
-            light: '#F8FAFC'
-          },
-          fontFamily: {
-            heading: ['Inter', 'sans-serif'],
-            body: ['Open Sans', 'sans-serif']
-          }
-        }
-      }
-    }
-  </script>
-  
+
+  <!-- Precompiled (minified) Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
   <!-- AOS CSS for animations -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  
-  <!-- Flowbite -->
-  <script src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.js"></script>
-  
+
+  <!-- Custom Tailwind Overrides -->
   <style>
     :root {
       --header-height: 4rem;
     }
+    .text-primary { color: #1A73E8; }
+    .bg-primary { background-color: #1A73E8; }
+  </style>
 
-    /* Improved Preloader */
-    @keyframes spin {
-      to { transform: rotate(360deg); }
+  <!-- Inline CSS Optimizations -->
+  <style>
+    /* Preloader Styles */
+    @keyframes spin { 
+      to { transform: rotate(360deg); } 
     }
     .spinner {
       width: 4rem;
@@ -59,46 +43,23 @@
       animation: spin 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
       position: relative;
     }
-    .spinner::after {
-      content: '';
-      position: absolute;
-      top: -4px;
-      left: -4px;
-      right: -4px;
-      bottom: -4px;
-      border: 4px solid transparent;
-      border-radius: 50%;
-      border-top-color: #34A853;
-      animation: spin 2s linear infinite;
-    }
-
     /* Custom Scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #F1F5F9;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #1A73E8;
-      border-radius: 4px;
-    }
-
-    /* Improved Card Hover Effects */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #F1F5F9; }
+    ::-webkit-scrollbar-thumb { background: #1A73E8; border-radius: 4px; }
+    /* Card Hover Effects */
     .service-card {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       perspective: 1000px;
     }
     .service-card:hover {
       transform: translateY(-5px) rotateX(2deg) rotateY(2deg);
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
     }
-
     /* Gradient Overlay for Hero */
     .hero-overlay {
       background: linear-gradient(45deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.6) 100%);
     }
-
     /* Modern Input Styles */
     .form-input {
       transition: all 0.3s ease;
@@ -110,49 +71,45 @@
     }
   </style>
 </head>
-<body class="bg-light text-dark font-body">
-  <!-- Enhanced Preloader -->
+<body class="bg-light text-dark">
+  <!-- Preloader -->
   <div id="preloader" class="fixed inset-0 flex items-center justify-center bg-white z-[999]">
     <div class="spinner"></div>
-    <div class="absolute inset-0 bg-white opacity-75"></div>
   </div>
 
-  <!-- Sticky Header with Scroll Effects -->
+  <!-- Header -->
   <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300" id="header">
     <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2 text-primary text-xl font-heading font-bold">
-        <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M16 2L30 16L16 30L2 16L16 2Z" stroke="currentColor" stroke-width="2" fill="none"/>
-          <path d="M16 8L24 16L16 24L8 16L16 8Z" stroke="currentColor" stroke-width="2" fill="none"/>
+      <a href="#" class="flex items-center gap-2 text-primary text-xl font-bold">
+        <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none">
+          <path d="M16 2L30 16L16 30L2 16L16 2Z" stroke="currentColor" stroke-width="2"/>
+          <path d="M16 8L24 16L16 24L8 16L16 8Z" stroke="currentColor" stroke-width="2"/>
         </svg>
         SokoData
       </a>
-      
       <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center gap-6">
-        <a href="#home" class="nav-link hover:text-primary transition-colors">
+        <a href="#home" class="hover:text-primary transition-colors">
           <i class="fas fa-home mr-2"></i>Home
         </a>
-        <a href="#services" class="nav-link hover:text-primary transition-colors">
+        <a href="#services" class="hover:text-primary transition-colors">
           <i class="fas fa-cogs mr-2"></i>Solutions
         </a>
-        <a href="#about" class="nav-link hover:text-primary transition-colors">
+        <a href="#about" class="hover:text-primary transition-colors">
           <i class="fas fa-info-circle mr-2"></i>About
         </a>
-        <a href="#testimonials" class="nav-link hover:text-primary transition-colors">
+        <a href="#testimonials" class="hover:text-primary transition-colors">
           <i class="fas fa-quote-left mr-2"></i>Testimonials
         </a>
         <button class="btn-primary" data-modal-target="contactModal" data-modal-toggle="contactModal">
           <i class="fas fa-envelope mr-2"></i>Contact
         </button>
       </div>
-
       <!-- Mobile Menu Button -->
       <button id="menuButton" class="md:hidden text-dark hover:text-primary transition-colors">
         <i class="fas fa-bars text-xl"></i>
       </button>
     </nav>
-
     <!-- Mobile Menu -->
     <div id="mobileMenu" class="md:hidden hidden absolute top-full left-0 right-0 bg-white shadow-lg">
       <div class="container px-4 py-4">
@@ -167,72 +124,38 @@
     </div>
   </header>
 
-  <!-- Hero Section with Single-Arrow Navigation, Dark Overlay, Integrated Quotes, and "Our Solutions" Button -->
-  <!-- mt-16 ensures the sticky nav does not cover the hero -->
+  <!-- Hero Section -->
   <section id="home" class="relative mt-16">
-    <!-- Hero Carousel: Height set to 100vh minus nav (~4rem) -->
     <div id="heroCarousel" class="relative h-[calc(100vh-4rem)] overflow-hidden">
-      <!-- Slide 1 -->
-      <div class="carousel-item hidden duration-700 ease-in-out" data-index="0">
-        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
-             class="absolute inset-0 w-full h-full object-cover" alt="Background 1" />
-        <!-- Dark Overlay -->
+      <!-- Slide 1 (critical) -->
+      <div class="carousel-item" data-index="0">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="absolute inset-0 w-full h-full object-cover" alt="Background 1">
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <div class="absolute inset-0 flex flex-col items-center justify-center px-4 z-10">
           <h2 class="text-3xl sm:text-4xl md:text-6xl font-bold text-white text-center">Transforming Data into Decisions</h2>
-          <p class="mt-4 text-base sm:text-xl md:text-2xl text-white text-center max-w-2xl">"Your data, our expertise: Turning numbers into narratives."</p>
-          <a href="#services" class="mt-6 inline-block border border-white text-white py-2 px-4 rounded hover:bg-white hover:text-blue-700 transition">Our Solutions</a>
+          <p class="mt-4 text-base sm:text-xl md:text-2xl text-white text-center max-w-2xl">
+            "Your data, our expertise: Turning numbers into narratives."
+          </p>
+          <a href="#services" class="mt-6 inline-block border border-white text-white py-2 px-4 rounded hover:bg-white hover:text-blue-700 transition">
+            Our Solutions
+          </a>
         </div>
       </div>
-      <!-- Slide 2 -->
-      <div class="carousel-item hidden duration-700 ease-in-out" data-index="1">
-        <img src="https://images.unsplash.com/photo-1496317899792-9d7dbcd928a1?auto=format&fit=crop&w=1350&q=80" 
-             class="absolute inset-0 w-full h-full object-cover" alt="Background 2" />
-        <!-- Dark Overlay -->
+      <!-- Slide 2 (lazy loaded) -->
+      <div class="carousel-item hidden" data-index="1">
+        <img src="https://images.unsplash.com/photo-1496317899792-9d7dbcd928a1?auto=format&fit=crop&w=1350&q=80" class="absolute inset-0 w-full h-full object-cover" alt="Background 2" loading="lazy">
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <div class="absolute inset-0 flex flex-col items-center justify-center px-4 z-10">
           <h2 class="text-3xl sm:text-4xl md:text-6xl font-bold text-white text-center">Transforming Data into Decisions</h2>
-          <p class="mt-4 text-base sm:text-xl md:text-2xl text-white text-center max-w-2xl">"Empowering businesses with insights that drive success."</p>
-          <a href="#services" class="mt-6 inline-block border border-white text-white py-2 px-4 rounded hover:bg-white hover:text-blue-700 transition">Our Solutions</a>
+          <p class="mt-4 text-base sm:text-xl md:text-2xl text-white text-center max-w-2xl">
+            "Empowering businesses with insights that drive success."
+          </p>
+          <a href="#services" class="mt-6 inline-block border border-white text-white py-2 px-4 rounded hover:bg-white hover:text-blue-700 transition">
+            Our Solutions
+          </a>
         </div>
       </div>
-      <!-- Slide 3 -->
-      <div class="carousel-item hidden duration-700 ease-in-out" data-index="2">
-        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1350&q=80" 
-             class="absolute inset-0 w-full h-full object-cover" alt="Background 3" />
-        <!-- Dark Overlay -->
-        <div class="absolute inset-0 bg-black opacity-50"></div>
-        <div class="absolute inset-0 flex flex-col items-center justify-center px-4 z-10">
-          <h2 class="text-3xl sm:text-4xl md:text-6xl font-bold text-white text-center">Transforming Data into Decisions</h2>
-          <p class="mt-4 text-base sm:text-xl md:text-2xl text-white text-center max-w-2xl">"Innovation through analytics – every byte counts."</p>
-          <a href="#services" class="mt-6 inline-block border border-white text-white py-2 px-4 rounded hover:bg-white hover:text-blue-700 transition">Our Solutions</a>
-        </div>
-      </div>
-      <!-- Slide 4 -->
-      <div class="carousel-item hidden duration-700 ease-in-out" data-index="3">
-        <img src="https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1350&q=80" 
-             class="absolute inset-0 w-full h-full object-cover" alt="Background 4" />
-        <!-- Dark Overlay -->
-        <div class="absolute inset-0 bg-black opacity-50"></div>
-        <div class="absolute inset-0 flex flex-col items-center justify-center px-4 z-10">
-          <h2 class="text-3xl sm:text-4xl md:text-6xl font-bold text-white text-center">Transforming Data into Decisions</h2>
-          <p class="mt-4 text-base sm:text-xl md:text-2xl text-white text-center max-w-2xl">"Harnessing data to create clarity and drive results."</p>
-          <a href="#services" class="mt-6 inline-block border border-white text-white py-2 px-4 rounded hover:bg-white hover:text-blue-700 transition">Our Solutions</a>
-        </div>
-      </div>
-      <!-- Slide 5 -->
-      <div class="carousel-item hidden duration-700 ease-in-out" data-index="4">
-        <img src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4?auto=format&fit=crop&w=1350&q=80" 
-             class="absolute inset-0 w-full h-full object-cover" alt="Background 5" />
-        <!-- Dark Overlay -->
-        <div class="absolute inset-0 bg-black opacity-50"></div>
-        <div class="absolute inset-0 flex flex-col items-center justify-center px-4 z-10">
-          <h2 class="text-3xl sm:text-4xl md:text-6xl font-bold text-white text-center">Transforming Data into Decisions</h2>
-          <p class="mt-4 text-base sm:text-xl md:text-2xl text-white text-center max-w-2xl">"Delivering insights that transform challenges into opportunities."</p>
-          <a href="#services" class="mt-6 inline-block border border-white text-white py-2 px-4 rounded hover:bg-white hover:text-blue-700 transition">Our Solutions</a>
-        </div>
-      </div>
-      <!-- Carousel Controls (Arrows with high z-index for clickability) -->
+      <!-- Carousel Controls -->
       <button type="button" id="heroPrev" class="absolute left-0 top-1/2 z-50 transform -translate-y-1/2 p-4 focus:outline-none">
         <span class="inline-flex items-center justify-center w-10 h-10 bg-white/30 rounded-full">
           <i class="fas fa-chevron-left text-white"></i>
@@ -248,79 +171,43 @@
     </div>
   </section>
 
-  <!-- Solutions Section -->
+  <!-- Services Section -->
   <section id="services" class="py-16">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Our Solutions</h2>
       <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        <!-- Agriculture Card -->
+        <!-- Example Service Card -->
         <div class="bg-white rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
           <img loading="lazy" src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=800&q=80" alt="Agriculture Analytics" class="w-full h-48 object-cover rounded-t-lg">
           <div class="p-4">
             <h5 class="font-bold text-xl">Agriculture Analytics</h5>
-            <p class="mt-2 text-gray-600">Optimize crop planning with precision farming tools combining weather and soil data.</p>
+            <p class="mt-2 text-gray-600">
+              Optimize crop planning with precision farming tools combining weather and soil data.
+            </p>
           </div>
         </div>
-        <!-- Fintech Card -->
+        <!-- Additional service cards -->
         <div class="bg-white rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="200">
           <img loading="lazy" src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80" alt="Fintech Insights" class="w-full h-48 object-cover rounded-t-lg">
           <div class="p-4">
             <h5 class="font-bold text-xl">Fintech Insights</h5>
-            <p class="mt-2 text-gray-600">Leverage mobile money data for fraud detection and customer insights.</p>
+            <p class="mt-2 text-gray-600">
+              Leverage mobile money data for fraud detection and customer insights.
+            </p>
           </div>
         </div>
-        <!-- Healthcare Card -->
-        <div class="bg-white rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="300">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1576765974257-b414b9ea0051?auto=format&fit=crop&w=800&q=80" alt="Healthcare Analytics" class="w-full h-48 object-cover rounded-t-lg">
-          <div class="p-4">
-            <h5 class="font-bold text-xl">Healthcare Analytics</h5>
-            <p class="mt-2 text-gray-600">Optimize healthcare resource management with predictive analytics.</p>
-          </div>
-        </div>
-        <!-- Retail Analytics Card -->
-        <div class="bg-white rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="400">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&w=800&q=80" alt="Retail Analytics" class="w-full h-48 object-cover rounded-t-lg">
-          <div class="p-4">
-            <h5 class="font-bold text-xl">Retail Analytics</h5>
-            <p class="mt-2 text-gray-600">Unlock consumer insights through advanced market analysis.</p>
-          </div>
-        </div>
-        <!-- Cyber Security Analytics Card -->
-        <div class="bg-white rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="500">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=800&q=80" alt="Cyber Security Analytics" class="w-full h-48 object-cover rounded-t-lg">
-          <div class="p-4">
-            <h5 class="font-bold text-xl">Cyber Security Analytics</h5>
-            <p class="mt-2 text-gray-600">Mitigate risks with data-driven strategies and real-time threat analysis.</p>
-          </div>
-        </div>
-        <!-- Data Protection Solutions Card -->
-        <div class="bg-white rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="600">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=800&q=80" alt="Data Protection Solutions" class="w-full h-48 object-cover rounded-t-lg">
-          <div class="p-4">
-            <h5 class="font-bold text-xl">Data Protection Solutions</h5>
-            <p class="mt-2 text-gray-600">Secure your business with robust data protection frameworks and compliance analytics.</p>
-          </div>
-        </div>
-        <!-- Data Consultation Card -->
-        <div class="bg-white rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="700">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80" alt="Data Consultation" class="w-full h-48 object-cover rounded-t-lg">
-          <div class="p-4">
-            <h5 class="font-bold text-xl">Data Consultation</h5>
-            <p class="mt-2 text-gray-600">Consult with our experts to gain personalized insights from your data, driving smarter decisions.</p>
-          </div>
-        </div>
+        <!-- More service cards can be added here following the same pattern -->
       </div>
     </div>
   </section>
 
-  <!-- About Us Section (Combined Content) -->
+  <!-- About Section -->
   <section id="about" class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">About Us</h2>
-      <!-- Image & Intro -->
       <div class="flex flex-col md:flex-row items-center mb-12" data-aos="fade-up">
         <div class="md:w-1/2">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80" alt="About SokoData" class="rounded-lg shadow-lg" />
+          <img loading="lazy" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80" alt="About SokoData" class="rounded-lg shadow-lg">
         </div>
         <div class="md:w-1/2 mt-8 md:mt-0 md:pl-12">
           <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -330,18 +217,15 @@
           </div>
         </div>
       </div>
-      <!-- Company Overview -->
       <div class="mb-12" data-aos="fade-up">
         <h3 class="text-2xl font-semibold">Company Overview</h3>
         <p class="mt-4 text-gray-700">
           Founded with a passion for harnessing data to drive growth, SokoData Solutions has a rich history of innovation. Our mission is to empower businesses through actionable insights, while our vision is to lead the transformation of industries through advanced analytics.
         </p>
       </div>
-      <!-- Team Members -->
       <div class="mb-12" data-aos="fade-up">
         <h3 class="text-2xl font-semibold">Team Members</h3>
         <div class="flex flex-wrap mt-4">
-          <!-- Team Member Card 1 -->
           <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2">
             <div class="bg-white p-4 rounded-lg shadow">
               <img src="https://via.placeholder.com/150?text=John+Doe" alt="John Doe" class="w-full rounded-full mb-4">
@@ -350,7 +234,6 @@
               <p class="mt-2 text-gray-700 text-sm">Pharaoh leads our vision with decades of experience in data analytics.</p>
             </div>
           </div>
-          <!-- Team Member Card 2 -->
           <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2">
             <div class="bg-white p-4 rounded-lg shadow">
               <img src="https://via.placeholder.com/150?text=Jane+Smith" alt="Jane Smith" class="w-full rounded-full mb-4">
@@ -359,10 +242,8 @@
               <p class="mt-2 text-gray-700 text-sm">Jane drives our technical innovation and oversees product development.</p>
             </div>
           </div>
-          <!-- Additional team members can be added here -->
         </div>
       </div>
-      <!-- Values -->
       <div data-aos="fade-up">
         <h3 class="text-2xl font-semibold">Values</h3>
         <ul class="mt-4 list-disc list-inside text-gray-700">
@@ -379,7 +260,6 @@
   <section id="testimonials" class="py-16">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Testimonials</h2>
-      <!-- Simple Carousel using Flowbite -->
       <div id="testimonialCarousel" class="relative" data-carousel="slide" data-aos="fade-up">
         <div class="relative h-64 overflow-hidden rounded-lg">
           <div class="hidden duration-1500 ease-in-out" data-carousel-item>
@@ -407,7 +287,6 @@
             </blockquote>
           </div>
         </div>
-        <!-- Slider Controls -->
         <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
           <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50">
             <i class="fas fa-chevron-left text-white"></i>
@@ -424,7 +303,7 @@
     </div>
   </section>
 
-  <!-- Contact Modal (Using Flowbite Modal) -->
+  <!-- Contact Modal -->
   <div id="contactModal" tabindex="-1" aria-hidden="true" class="hidden fixed inset-0 z-50 overflow-y-auto" data-modal-backdrop="static">
     <div class="relative w-full max-w-md p-4 mx-auto mt-24">
       <div class="relative bg-white rounded-lg shadow">
@@ -441,14 +320,14 @@
               <label class="block mb-2 text-sm font-medium text-gray-900">Your Name</label>
               <div class="flex items-center border border-gray-300 rounded">
                 <span class="px-3 text-gray-500"><i class="fas fa-user"></i></span>
-                <input type="text" class="w-full p-2 focus:outline-none" placeholder="John Doe" required />
+                <input type="text" class="w-full p-2 focus:outline-none" placeholder="John Doe" required>
               </div>
             </div>
             <div class="mb-4">
               <label class="block mb-2 text-sm font-medium text-gray-900">Email Address</label>
               <div class="flex items-center border border-gray-300 rounded">
                 <span class="px-3 text-gray-500"><i class="fas fa-envelope"></i></span>
-                <input type="email" class="w-full p-2 focus:outline-none" placeholder="name@example.com" required />
+                <input type="email" class="w-full p-2 focus:outline-none" placeholder="name@example.com" required>
               </div>
             </div>
             <div class="mb-4">
@@ -542,18 +421,11 @@
     </div>
   </div>
 
-  <!-- Enhanced Script Section -->
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <!-- Scripts (loaded at the end for performance) -->
+  <script defer src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script defer src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.js"></script>
   <script>
-    // Initialize AOS with custom settings
-    AOS.init({
-      once: true,
-      duration: 800,
-      offset: 100,
-      easing: 'ease-out-cubic'
-    });
-
-    // Improved Preloader Handling
+    // Remove preloader on window load
     window.addEventListener('load', () => {
       const preloader = document.getElementById('preloader');
       preloader.style.transition = 'opacity 0.5s ease';
@@ -561,7 +433,15 @@
       setTimeout(() => preloader.remove(), 500);
     });
 
-    // Enhanced Carousel Logic
+    // Initialize AOS animations
+    AOS.init({
+      once: true,
+      duration: 800,
+      offset: 100,
+      easing: 'ease-out-cubic'
+    });
+
+    // Hero Carousel
     class HeroCarousel {
       constructor(selector) {
         this.carousel = document.querySelector(selector);
@@ -570,34 +450,28 @@
         this.interval = null;
         this.init();
       }
-
       init() {
         this.showItem(this.currentIndex);
         this.startAutoPlay();
         this.addEventListeners();
       }
-
       showItem(index) {
         this.items.forEach((item, i) => {
           item.classList.toggle('hidden', i !== index);
           item.style.opacity = i === index ? '1' : '0';
         });
       }
-
       next() {
         this.currentIndex = (this.currentIndex + 1) % this.items.length;
         this.showItem(this.currentIndex);
       }
-
       prev() {
         this.currentIndex = (this.currentIndex - 1 + this.items.length) % this.items.length;
         this.showItem(this.currentIndex);
       }
-
       startAutoPlay() {
         this.interval = setInterval(() => this.next(), 7000);
       }
-
       addEventListeners() {
         document.getElementById('heroNext').addEventListener('click', () => this.next());
         document.getElementById('heroPrev').addEventListener('click', () => this.prev());
@@ -605,23 +479,18 @@
         this.carousel.addEventListener('mouseleave', () => this.startAutoPlay());
       }
     }
-
-    // Initialize Carousel
     new HeroCarousel('#heroCarousel');
 
-    // Dynamic Year Update
+    // Update dynamic year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Enhanced Mobile Menu Handling
+    // Mobile Menu Toggle
     const menuButton = document.getElementById('menuButton');
     const mobileMenu = document.getElementById('mobileMenu');
-    
     menuButton.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
       menuButton.classList.toggle('text-primary');
     });
-
-    // Close menu when clicking outside
     document.addEventListener('click', (e) => {
       if (!menuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
         mobileMenu.classList.add('hidden');
